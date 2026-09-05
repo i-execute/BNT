@@ -2,10 +2,10 @@
 
 set -e
 
-TEMP_INSTALLER="/tmp/tgwatcher.sh"
-REPO_RAW="https://raw.githubusercontent.com/i-execute/TGWatcher/main/Storage/Installation/Setuper.sh"
+TEMP_INSTALLER="/tmp/BNT.sh"
+REPO_RAW="https://raw.githubusercontent.com/i-execute/BNT/main/Storage/Installation/Setuper.sh"
 
-echo "Downloading TGWatcher setuper..."
+echo "Downloading BNT setuper..."
 
 if command -v curl &> /dev/null; then
     curl -fsSL "$REPO_RAW" -o "$TEMP_INSTALLER"

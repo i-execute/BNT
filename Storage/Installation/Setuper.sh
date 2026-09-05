@@ -2,11 +2,11 @@
 
 set -e
 
-INSTALL_DIR="$HOME/TGWatcher"
+INSTALL_DIR="$HOME/BNT"
 VENV_DIR="$INSTALL_DIR/venv"
-SERVICE_NAME="tgwatcher"
+SERVICE_NAME="BNT"
 PYTHON_BIN="$(command -v python3)"
-REPO_URL="https://github.com/i-execute/TGWatcher.git"
+REPO_URL="https://github.com/i-execute/BNT.git"
 ENV_FILE="$INSTALL_DIR/.env"
 
 if [ -z "$PYTHON_BIN" ]; then
@@ -14,14 +14,9 @@ if [ -z "$PYTHON_BIN" ]; then
     exit 1
 fi
 
-echo ""
 echo "Welcome back $USER"
-sleep 0.5
-echo "Time to login in new one account"
-sleep 0.5
-echo "Installing TGWatcher..."
-sleep 0.5
-echo ""
+echo "Time to do something interesting"
+echo "Installation..."
 
 env_is_valid() {
     [ -f "$ENV_FILE" ] || return 1
@@ -79,7 +74,7 @@ if [ -d "$INSTALL_DIR/.git" ]; then
 fi
 
 if [ "$ALREADY_INSTALLED" -eq 1 ]; then
-    echo "TGWatcher already installed, checking .env..."
+    echo "BNT already installed, checking .env..."
 
     if env_is_valid; then
         echo ""
@@ -121,18 +116,18 @@ else
 
     echo "Building daemon configuration..."
 
-    UNIT_DIR="$HOME/.config/tagwatcher/bot"
+    UNIT_DIR="$HOME/.config/BNT/bot"
     mkdir -p "$UNIT_DIR"
 
     cat > "$UNIT_DIR/${SERVICE_NAME}.service" <<EOF
 [Unit]
-Description=TGWatcher
+Description=BNT
 After=network.target
 
 [Service]
 WorkingDirectory=$INSTALL_DIR
 EnvironmentFile=$ENV_FILE
-ExecStart=$VENV_DIR/bin/python3 $INSTALL_DIR/TGW/core.py
+ExecStart=$VENV_DIR/bin/python3 $INSTALL_DIR/BNT/core.py
 Restart=always
 RestartSec=5
 
@@ -150,7 +145,7 @@ fi
 systemctl --user restart "$SERVICE_NAME"
 
 echo ""
-echo "[*] TGWatcher successfully started"
+echo "[*] BNT successfully runned"
 echo "    I_execute.t.me"
 echo ""
 
@@ -158,9 +153,3 @@ echo "----------------------------------"
 echo " installed in   : $INSTALL_DIR"
 echo " venv directory : $VENV_DIR"
 echo " config         : $ENV_FILE"
-echo ""
-echo "Swift commands:"
-echo " status  : systemctl --user status $SERVICE_NAME"
-echo " logs    : journalctl --user -u $SERVICE_NAME -f"
-echo " stop    : systemctl --user stop $SERVICE_NAME"
-echo " restart : systemctl --user restart $SERVICE_NAME"
