@@ -1,28 +1,54 @@
-# TGWatcher
+<p align="center">
+  <a href="https://t.me/I_execute"><img src="https://img.shields.io/badge/Telegram-@I__execute-26A5E4?style=flat&logo=telegram&logoColor=white" alt="Telegram" /></a>
+</p>
 
-Telegram access when SMS is blocked.
+### BNT - Bot Net Tool in Telegram wich let you using self-made modules!
 
-## Quick Start
+This tool is for personal use only. Keep your sessions secure. The author is not responsible for misuse and deleted/limited/frozen accounts.
 
-curl:
+### Quick Start
+
+Prepare your Bot token and API cerds from [my.telegram.org](https://my.telegram.org) and run that script:
+
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/i-execute/TGWatcher/main/Storage/Installation/QuickStart.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/i-execute/BNT/main/Storage/Installation/QuickStart.sh)
 ```
 
-wget:
+### Service Management
+
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/i-execute/TGWatcher/main/Storage/Installation/QuickStart.sh)
+systemctl --user status tgwatcher
+systemctl --user restart tgwatcher
+systemctl --user stop tgwatcher
+journalctl --user -u tgwatcher -f
 ```
 
-## Documentation
+### File Structure
 
-- [EN Documentation](Storage/README/README_EN.md)
-- [RU Documentation](Storage/README/README_RU.md)
+```
+BNT/
+├── CHANGELOG.md
+├── README.md
+├── LICENSE
+├── Storage/
+│   ├── installation/
+│   │   ├── QuickStart.sh
+│   │   └── Setuper.sh
+│   ├── Photo/
+│   └── Video/
+└── BNT/
+    ├── protection.py
+    ├── functions.py
+    ├── commands.py
+    ├── updater.py
+    ├── strings.py
+    ├── core.py
+    ├── tl.py
+    └── Modules/
+        ├── OnlineKeeper.py
+        └── Watcher.py
+```
 
-## License
+### License
 
 GNU GPL v3 - see [LICENSE](LICENSE)
-
-## Author
-
-[@I_execute](https://t.me/I_execute)
