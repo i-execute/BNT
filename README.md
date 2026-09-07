@@ -17,10 +17,10 @@ bash <(curl -fsSL https://raw.githubusercontent.com/i-execute/BNT/main/Storage/I
 ### Service Management
 
 ```bash
-systemctl --user status tgwatcher
-systemctl --user restart tgwatcher
-systemctl --user stop tgwatcher
-journalctl --user -u tgwatcher -f
+systemctl --user status BNT
+systemctl --user restart BNT
+systemctl --user stop BNT
+journalctl --user -u BNT -f
 ```
 
 ### File Structure

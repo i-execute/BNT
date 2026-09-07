@@ -1,3 +1,8 @@
+# CopyLeft 2026 github.com/i-execute
+# Telegram: I_execute.t.me
+# Licensed under AGPLv3.
+# For personal use only.
+
 import random
 from telethon.tl.functions.messages import SendMediaRequest
 from telethon.tl.types import InputMediaWebPage, InputReplyToMessage

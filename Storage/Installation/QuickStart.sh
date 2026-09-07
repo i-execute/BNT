@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# CopyLeft 2026 github.com/i-execute
+# Telegram: I_execute.t.me
+# Licensed under AGPLv3.
+# For personal use only.
+
 set -e
 
 TEMP_INSTALLER="/tmp/BNT.sh"

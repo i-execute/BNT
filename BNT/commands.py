@@ -1,3 +1,8 @@
+# CopyLeft 2026 github.com/i-execute
+# Telegram: I_execute.t.me
+# Licensed under AGPLv3.
+# For personal use only.
+
 import os
 import asyncio
 import tempfile
@@ -20,7 +25,6 @@ PREVIEW_URL = "https://github.com/i-execute/TGWatcher"
 
 
 def btn(text, data, style="primary"):
-    # valid: "primary" (blue), "success" (green), "danger" (red)
     valid = {"primary", "success", "danger"}
     return Button.inline(text, data.encode(), style=style if style in valid else "primary")
 
