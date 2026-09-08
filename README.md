@@ -4,7 +4,7 @@
 
 ### BNT - Bot Net Tool in Telegram wich let you using self-made modules!
 
-This tool is for personal use only. Keep your sessions secure. The author is not responsible for misuse and deleted/limited/frozen accounts.
+Keep your sessions secure. The author is not responsible for misuse and deleted/limited/frozen accounts.
 
 ### Quick Start
 
