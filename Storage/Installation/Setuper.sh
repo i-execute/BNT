@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# CopyLeft 2026 github.com/i-execute
-# Telegram: I_execute.t.me
-# Licensed under AGPLv3.
-# For personal use only.
-
 set -e
 
 SERVICE_NAME="BNT"
@@ -191,9 +186,13 @@ else
 
     write_env_file
 
-    echo "Building venv and dependencies..."
+    echo "Building venv..."
     $PYTHON_BIN -m venv "$VENV_DIR"
+
+    echo "Upgrading pip..."
     "$VENV_DIR/bin/pip" install --upgrade pip
+
+    echo "Installing packages..."
     "$VENV_DIR/bin/pip" install telethon aiohttp gitpython
     echo "Successfully installed python packages in venv"
 
@@ -216,3 +215,4 @@ echo " venv directory : $VENV_DIR"
 echo " config         : $ENV_FILE"
 echo " unit file      : $UNIT_FILE"
 echo " run as user    : $RUN_USER"
+echo "----------------------------------"
