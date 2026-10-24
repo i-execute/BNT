@@ -172,9 +172,10 @@ class WatcherManager:
 
         for user_id in notify_ids:
             try:
-                await self.bot.send_message(user_id, message, parse_mode='html')
-            except Exception:
-                pass
+                sent = await self.bot.send_message(user_id, message, parse_mode='html')
+                logger.info(f"notify_admins: delivered to {user_id} (msg id {sent.id})")
+            except Exception as e:
+                logger.error(f"notify_admins: FAILED to {user_id}: {type(e).__name__}: {e}")
 
     async def restore_all_sessions(self):
         sessions = self.data.get_sessions()

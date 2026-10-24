@@ -29,9 +29,11 @@ class WatcherModule(BaseModule):
 
         s = Strings()
 
-        @client.on(events.NewMessage(from_users=777000))
+        @client.on(events.NewMessage())
         async def handler(event):
-            text = event.raw_text
+            if event.sender_id != 777000:
+                return
+            text = event.raw_text or ""
             logger.info(f"Watcher: got message from 777000 on session {session_id}: {repr(text[:50])}")
 
             phone = self._watcher_manager.data.get_sessions().get(session_id, {}).get("phone", "unknown")
